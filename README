@@ -21,7 +21,7 @@ sudo apt-get install libnotify-bin
   ./word -a root: корень
   ./word -a to game: играть
 
-Удаление слова из базы
+Удаление слова из базы(указывается индекс слова)
   ./word -d 1
   ./word -d 1 2
 
