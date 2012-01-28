@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+require 'optparse'
+require 'pp'
+require File.dirname(__FILE__) + '/lib/db'
+
+#Database name
+DATABASE = "jumping_words"
+
+
+options = {}
+optparse = OptionParser.new do|opts|
+
+  #The command addes a word
+  opts.on( '-a', '--add', 'Add the word' ) do
+    if ARGV.empty? or ARGV.size < 2
+      puts 'You mast set 2 words! Firs is word, second is translate. Like this: "./word -a to run: бежать"'
+      exit
+    else
+      db = DbWords.new(ARGV)
+      db.add
+      exit
+    end
+  end
+
+  #The command deletes a word
+  opts.on( '-d', '--destroy', 'Delete the word' ) do
+    if ARGV.empty?
+      puts 'You mast set number of word!'
+      exit
+    else
+      db = DbWords.new(ARGV)
+      db.destroy
+      exit
+    end
+  end
+
+  #The list of words
+  opts.on( '-l', '--list', 'List of words' ) do
+    db = DbWords.new
+    db.list
+    exit
+  end
+end
+
+# Parse the command-line. Remember there are two forms
+# of the parse method. The 'parse' method simply parses
+# ARGV, while the 'parse!' method parses ARGV and removes
+# any options found there, as well as any parameters for
+# the options. What's left is the list of files to resize.
+optparse.parse!
+
+pp "Options:", options
+pp "ARGV:", ARGV
