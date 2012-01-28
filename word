@@ -2,11 +2,9 @@
 # encoding: utf-8
 require 'optparse'
 require 'pp'
-require File.dirname(__FILE__) + '/lib/db'
-
-#Database name
-DATABASE = "jumping_words"
-
+require File.dirname(__FILE__) + '/lib/db_words'
+require File.dirname(__FILE__) + '/lib/say_words'
+require File.dirname(__FILE__) + '/lib/config'
 
 options = {}
 optparse = OptionParser.new do|opts|
@@ -41,14 +39,20 @@ optparse = OptionParser.new do|opts|
     db.list
     exit
   end
+
+  #run the application
+  opts.on( '-s', '--start', 'Start of app' ) do
+    db = DbWords.new
+    app = SayWords.new(db.collection, :show_message => SHOW_MESSAGE,  :space_words => SPACE_WORDS, :space_interation => SPACE_INTERATION)
+
+    begin
+      app.run
+    rescue Interrupt
+      puts "Exiting..."
+    end
+  end
+
 end
 
-# Parse the command-line. Remember there are two forms
-# of the parse method. The 'parse' method simply parses
-# ARGV, while the 'parse!' method parses ARGV and removes
-# any options found there, as well as any parameters for
-# the options. What's left is the list of files to resize.
 optparse.parse!
 
-pp "Options:", options
-pp "ARGV:", ARGV

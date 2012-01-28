@@ -10,6 +10,12 @@ class DbWords
     @file = "./" + DATABASE + ".csv"
   end
 
+  #collecion of words
+  def collection
+    col = CSV.read(@file)
+    col
+  end
+
   #adding word in db
   def add
     split
@@ -26,7 +32,7 @@ class DbWords
 
   #Destroy a word from db file
   def destroy
-    list_w = CSV.read(@file)
+    list_w = collection
     @argv.map(&:to_i).each do |i|
       list_w.delete_at(i-1)
     end
@@ -62,13 +68,12 @@ class DbWords
   #return true if have double in db
   def double?
     w = @words.first
-    list = CSV.read(@file)
+    list = collection
     list.map(&:first).include?( w )
   end
 
   def list_of_words
-    list = CSV.read(@file)
-    list.each_with_index do |word, idx|
+    collection.each_with_index do |word, idx|
       yield(word, idx)
     end
   end
