@@ -11,11 +11,11 @@ class SayWords
     loop do
       @collection.each do |word|
         puts "I say #{word[0]}"
-        system 'notify-send -i /usr/share/pixmaps/gnome-irc.png "'+ word[0] +'" "'+ word[1] +'"  -t 1' if @show_message
+        system 'notify-send -i /usr/share/pixmaps/gnome-irc.png "'+ word[0] +'" "'+ word[1..-1].join(", ") +'"  -t 1' if @show_message.to_s
         system 'espeak -v en -s120 "'+ word[0] +'"'
         sleep @space_words
         #puts "I say #{word[1]}"
-        system 'espeak -v ru -s120 "'+ word[1] +'"'
+        system 'espeak -v ru -s120 "'+ word[1..-1].join(", ") +'"'
         sleep @space_interation
       end
       sleep 4 # for notification hiding
