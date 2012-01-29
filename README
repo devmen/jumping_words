@@ -25,3 +25,7 @@ sudo apt-get install libnotify-bin
   ./word -d 1
   ./word -d 1 2
 
+== Установка
+
+git clone git://github.com/devmen/jumping_words.git
+
