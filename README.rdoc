@@ -1,30 +1,29 @@
 = Jumping Words
-Программа для Ubuntu произносит и выводит в поп-ап окне слово(фразу), а затем переводимое слово(фразу).
+The program for Ubuntu speaks and displays in the pop-up window the word (phrase) and then translated word (phrase).
 
-== Зависимости
+== Dependencies
 sudo apt-get install libnotify-bin
 
-== Дейсвия
-Запуск
-  ./word -s
+== Actions
+Starting
+  jword -s
 
-Просмотр списка слов
-  ./word -l
+View a list of words
+  jword -l
 
   1 to write: писать
   2 root: корень
   3 list: список
   ...
 
-Добавление слов в базу
-  ./word -a root: корень
-  ./word -a to game: играть
+Adding words to the database
+  jword -a root: корень
+  jword -a to game: играть
 
-Удаление слова из базы(указывается индекс слова)
-  ./word -d 1
-  ./word -d 1 2
+Delete a word from the database (indicated by the index of the word)
+  jword -d 1
+  jword -d 1 2
 
-== Установка
-
-git clone git://github.com/devmen/jumping_words.git
+== Install
+gem install jumping_words
 

@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Jwords::VERSION
   s.authors     = ["Alex Dmitriev"]
   s.email       = ["alex@devmen.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/devmen/jumping_words"
   s.summary     = %q{Jumping Words is gem for learning new words foreign languages}
   s.description = %q{Jumping Words is gem for learning new words foreign languages, only ubuntu}
 
