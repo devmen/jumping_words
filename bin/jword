@@ -2,9 +2,7 @@
 # encoding: utf-8
 require 'optparse'
 require 'pp'
-require File.dirname(__FILE__) + '/lib/db_words'
-require File.dirname(__FILE__) + '/lib/say_words'
-require File.dirname(__FILE__) + '/lib/config'
+require File.dirname(__FILE__) + '/lib/jwords'
 
 options = {}
 optparse = OptionParser.new do|opts|
