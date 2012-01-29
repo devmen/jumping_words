@@ -1,5 +1,5 @@
-require File.dirname(__FILE__) + "/../lib/jwords/version"
-require File.dirname(__FILE__) + '/../lib/jwords/db_words'
-require File.dirname(__FILE__) + '/../lib/jwords/say_words'
+require File.dirname(__FILE__) + "/jwords/version"
+require File.dirname(__FILE__) + '/jwords/db_words'
+require File.dirname(__FILE__) + '/jwords/say_words'
 require File.dirname(__FILE__) + '/../config'
 
