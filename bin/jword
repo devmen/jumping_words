@@ -2,7 +2,9 @@
 # encoding: utf-8
 require 'optparse'
 require 'pp'
-require File.dirname(__FILE__) + '/lib/jwords'
+
+$:.push File.expand_path("../../lib", __FILE__)
+require 'jumping_words'
 
 options = {}
 optparse = OptionParser.new do|opts|

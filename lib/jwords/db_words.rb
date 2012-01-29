@@ -7,7 +7,7 @@ class DbWords
   def initialize(argv=nil)
     @argv = argv
     @words = Array.new
-    @file = "./" + DATABASE + ".csv"
+    @file = "../db/" + DATABASE + ".csv"
   end
 
   #collecion of words
