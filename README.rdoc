@@ -1,18 +1,24 @@
 = Jumping Words
-The program for Ubuntu speaks and displays in the pop-up window the word (phrase) and then translated word (phrase).
+The program for Ubuntu or MAC OS X(!!! Only 10.8 or higher version MAC OS X).
+Does this: speaks and displays in the pop-up window the word (phrase) and then translated word (phrase).
+After end of list back to start.
 
 == Dependencies
+For linux
 sudo apt-get install libnotify-bin
+
+For MAC OS X for the Russian users you must change the voice of system to Milena
+
 
 == Actions
 Starting
-  jword -s
+  jwords -s
 
 Stoping
   ctrl+c
 
 View a list of words
-  jword -l
+  jwords -l
 
   1 to write: писать
   2 root: корень
@@ -20,13 +26,15 @@ View a list of words
   ...
 
 Adding words to the database
-  jword -a root: корень
-  jword -a to game: играть
+  jwords -a root: корень
+  jwords -a to game: играть
 
 Delete a word from the database (indicated by the index of the word)
-  jword -d 1
-  jword -d 1 2
+  jwords -d 1
+  jwords -d 1 2
 
 == Install
 gem install jumping_words
 
+== ToDo
+For Ubuntu users give config for changing language system voice.

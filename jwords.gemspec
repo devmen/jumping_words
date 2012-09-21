@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["alex@devmen.com"]
   s.homepage    = "https://github.com/devmen/jumping_words"
   s.summary     = %q{Jumping Words is gem for learning new words foreign languages}
-  s.description = %q{Jumping Words is gem for learning new words foreign languages, only ubuntu}
+  s.description = %q{Jumping Words is gem for learning new words foreign languages, only Ubuntu or MAC OS X(10.8 or higher}
 
   s.rubyforge_project = "jumping_words"
 
@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_runtime_dependency "terminal-notifier"
 end

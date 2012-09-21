@@ -7,8 +7,8 @@ class DbWords
   def initialize(argv=nil)
     @argv = argv
     @words = Array.new
-
-    @file =  File.dirname(__FILE__) + "/../../db/" + DATABASE + ".csv"
+    @file = File.join(Dir.home, DATABASE_DIR, "#{DATABASE}.csv")
+    create_db unless File.exist?(@file)
   end
 
   #collecion of words
@@ -61,7 +61,7 @@ class DbWords
   def split
     w = @argv.join(" ").split(":")
     if w.size < 2
-      pp 'You mast set ":" on word. Like this: "./word -a to run: бежать"'
+      pp 'You mast set ":" on word. Like this: "jword -a to run: бежать"'
     end
     @words = w.map(&:strip)
   end
@@ -77,5 +77,10 @@ class DbWords
     collection.each_with_index do |word, idx|
       yield(word, idx)
     end
+  end
+
+  def create_db
+    Dir.mkdir(File.join(Dir.home, DATABASE_DIR), 0700)
+    File.new(@file, File::RDWR|File::CREAT, 0644)
   end
 end
