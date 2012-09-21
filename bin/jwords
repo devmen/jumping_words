@@ -12,7 +12,7 @@ optparse = OptionParser.new do|opts|
   #The command addes a word
   opts.on( '-a', '--add', 'Add the word' ) do
     if ARGV.empty? or ARGV.size < 2
-      puts 'You mast set 2 words! Firs is word, second is translate. Like this: "./word -a to run: бежать"'
+      puts 'You mast set 2 words! Firs is word, second is translate. Like this: "jwords -a to run: бежать"'
       exit
     else
       db = DbWords.new(ARGV)
