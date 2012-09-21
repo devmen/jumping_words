@@ -27,11 +27,10 @@ View a list of words
 
 Adding words to the database
   jwords -a root: корень
-  jwords -a to game: играть
+  jwords -a to play: играть
 
 Delete a word from the database (indicated by the index of the word)
   jwords -d 1
-  jwords -d 1 2
 
 == Install
 gem install jumping_words

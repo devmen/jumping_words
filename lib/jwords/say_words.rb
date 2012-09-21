@@ -36,12 +36,12 @@ class SayWords
     loop do
       @collection.each do |word|
         puts "I say #{word[0]}"
-        puts 'terminal-notifier -message "'+ word[0] +': '+ word[1] +'" -title "JWords"' if @show_message
+        #puts 'terminal-notifier -message "'+ word[0] +': '+ word[1] +'" -title "JWords"' if @show_message
         system 'terminal-notifier -message "'+ word[0] +': '+ word[1] +'" -title "JWords"' if @show_message
-        system 'say "'+ word[0] +'"'
+        system 'say -v Vicki "'+ word[0] +'"'
         sleep @space_words
         #puts "I say #{word[1]}"
-        system 'say "'+ word[1] +'"'
+        system 'say -v Milena "'+ word[1] +'"'
         sleep @space_interation
       end
       sleep 4 # for notification hiding
